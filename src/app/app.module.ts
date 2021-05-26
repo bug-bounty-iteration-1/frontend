@@ -12,6 +12,7 @@ import { MetricsComponent } from './metrics/metrics.component';
 import { BugreportsComponent } from './bugreports/bugreports.component';
 import { UsernavComponent } from './usernav/usernav.component';
 import { AdminnavComponent } from './adminnav/adminnav.component';
+import { GlobalstylesComponent } from './globalstyles/globalstyles.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AdminnavComponent } from './adminnav/adminnav.component';
     MetricsComponent,
     BugreportsComponent,
     UsernavComponent,
-    AdminnavComponent
+    AdminnavComponent,
+    GlobalstylesComponent
   ],
   imports: [
     BrowserModule,
