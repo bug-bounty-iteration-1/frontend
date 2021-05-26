@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'bugreports', component: BugreportsComponent},
   {path: 'leaderboard', component: LeaderboardComponent},
   {path: 'metrics', component: MetricsComponent},
-  {path: 'globalstyles', component: GlobalstylesComponent }
+  {path: 'globalstyles', component: GlobalstylesComponent}
 ];
 
 @NgModule({
