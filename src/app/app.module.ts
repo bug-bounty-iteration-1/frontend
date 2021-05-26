@@ -13,6 +13,7 @@ import { BugreportsComponent } from './bugreports/bugreports.component';
 import { UsernavComponent } from './usernav/usernav.component';
 import { AdminnavComponent } from './adminnav/adminnav.component';
 import { GlobalstylesComponent } from './globalstyles/globalstyles.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { GlobalstylesComponent } from './globalstyles/globalstyles.component';
     BugreportsComponent,
     UsernavComponent,
     AdminnavComponent,
-    GlobalstylesComponent
+    GlobalstylesComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
