@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face{
+    font-family: 'default';
+    src: url('assets/Futura-Std-Book.otf');
+}
+
+@font-face {
+    font-family: 'title';
+    src: url('assets/Futura-Std-Bold.otf');
+}
+
+@font-face {
+    font-family:'sub-title';
+    src: url('assets/Futura-Std-Heavy.otf');
+}
+
+@font-face {
+    font-family: 'alt-text';
+    src: url('assets/Futura-Std-Medium.otf');
+}
+
+body {
+    font-family: 'default', Fallback, sans-serif !important;
+}
+
+.title {
+    font-family: 'title';
+}
+
+.sub-title {
+    font-family:'sub-title';
+}
+
+.alt-text {
+    font-family: 'alt-text';
+}
+
+.mybtn:hover {
+background-color:#B9B9BA
+}
+
+.orange-button {
+    background-color:#F26925;
+    border: none;
+}
+
+.darkgrey-button {
+    background-color: #474C55;
+    border: none;
+}
+
+.blue-button {
+    background-color:#72A4C2;
+    border:none;
+}
+
+.yellow-button {
+    background-color:#FCB414;
+    border:none;
+}
+
+.grey-button {
+    background-color: #B9B9BA;
+    border:none;
+}
+
