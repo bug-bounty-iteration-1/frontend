@@ -22,11 +22,13 @@
         <td>{{bug.date}}</td>
         <td>{{bug.status}}</td>
         <td *ngIf="bug.status==='pending'">
-            <button style="margin-right: 16px"  class="btn btn-info" (click)=approveBug(bug)>Approve</button>
-            <button class="btn btn-info" (click)=denyBug(bug)>Deny</button>
+            <button style="margin-right: 10px" class="btn btn-primary mybtn orange-button m-2" (click)=approveBug(bug)>Approve</button>
+            <button class="btn btn-primary mybtn blue-button m-2" (click)=denyBug(bug)>Deny</button>
         </td>
       </tr>
       
     </tbody>
   </table>
 </div>
+
+<app-footer></app-footer>
