@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Bug } from '../services/bugservice/bug';
+import { BugService } from '../services/bugservice/bug.service';
 
 @Component({
   selector: 'app-userhome',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./userhome.component.css']
 })
 export class UserhomeComponent implements OnInit {
-
-  constructor() { }
+  bugList: Bug[];
+  constructor(private bServ: BugService) { }
   display = "none";
+  detail= "none";
   ngOnInit(): void {
+
+    this.bServ.getAllBugs().subscribe(
+      response => {
+        console.log(response);
+        this.bugList = response;
+      }
+    )
   }
  
   openModal() {
@@ -17,6 +27,15 @@ export class UserhomeComponent implements OnInit {
   }
   onCloseHandled() {
     this.display = "none";
+  }
+
+  openDetailsModal() {
+    this.detail = "block";
+    
+  }
+
+  closeDetailsModal(){
+    this.detail = "none";
   }
 
 }
