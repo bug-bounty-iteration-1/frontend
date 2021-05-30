@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Bug } from '../services/bugservice/bug';
 import { BugService } from '../services/bugservice/bug.service';
 
@@ -8,10 +9,17 @@ import { BugService } from '../services/bugservice/bug.service';
   styleUrls: ['./userhome.component.css']
 })
 export class UserhomeComponent implements OnInit {
-  bugList: Bug[];
   constructor(private bServ: BugService) { }
+  bugList: Bug[];
+
+  
   display = "none";
   detail= "none";
+
+  bugGroup = new FormGroup({
+    bugDescription : new FormControl('')
+  });
+
   ngOnInit(): void {
 
     this.bServ.getAllBugs().subscribe(
