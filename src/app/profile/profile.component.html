@@ -1,1 +1,8 @@
-<p>profile works!</p>
+<app-profile-picture [firstLetter]="firstLetter" [lastLetter]="lastLetter"></app-profile-picture>
+<div class="m-4" *ngFor="let solutions of solutionArray">
+    <app-profile-solutions [bugName]="solutions.bugName" 
+    [bugLink]="solutions.bugLink" 
+    [solutionText]="solutions.solutionText" 
+    [solutionStatus]="solutions.solutionStatus">
+    </app-profile-solutions>
+</div>
