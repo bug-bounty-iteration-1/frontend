@@ -17,6 +17,7 @@ import { ProfilePictureComponent } from './profile/profile-picture/profile-pictu
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileSolutionsComponent } from './profile/profile-solutions/profile-solutions.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     AdminnavComponent,
     GlobalstylesComponent,
     FooterComponent,
-    ProfilePictureComponent
+    ProfilePictureComponent,
+    ProfileSolutionsComponent
   ],
   imports: [
     BrowserModule,
