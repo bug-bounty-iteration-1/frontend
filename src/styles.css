@@ -19,6 +19,12 @@
     src: url('assets/Futura-Std-Medium.otf');
 }
 
+:root {
+    --blue: #1e90ff;
+    --white: #ffffff;
+  }
+
+  
 body {
     font-family: 'default', Fallback, sans-serif !important;
 }
