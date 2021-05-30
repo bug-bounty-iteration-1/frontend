@@ -13,9 +13,9 @@ import { BugreportsComponent } from './bugreports/bugreports.component';
 import { UsernavComponent } from './usernav/usernav.component';
 import { AdminnavComponent } from './adminnav/adminnav.component';
 import { GlobalstylesComponent } from './globalstyles/globalstyles.component';
+import { ProfilePictureComponent } from './profile/profile-picture/profile-picture.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
-import { ProfilePictureComponent } from './profile/profile-picture/profile-picture.component';
 
 @NgModule({
   declarations: [
