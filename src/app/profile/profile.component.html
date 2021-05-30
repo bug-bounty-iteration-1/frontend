@@ -1,4 +1,5 @@
-<app-profile-picture [firstLetter]="firstLetter" [lastLetter]="lastLetter"></app-profile-picture>
+<div class="container p-5">
+    <app-profile-picture [firstLetter]="firstLetter" [lastLetter]="lastLetter"></app-profile-picture>
 <div class="m-4" *ngFor="let solutions of solutionArray">
     <app-profile-solutions [bugName]="solutions.bugName" 
     [bugLink]="solutions.bugLink" 
@@ -6,3 +7,6 @@
     [solutionStatus]="solutions.solutionStatus">
     </app-profile-solutions>
 </div>
+</div>
+
+<app-footer></app-footer>
