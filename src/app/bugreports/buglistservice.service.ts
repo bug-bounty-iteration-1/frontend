@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class BuglistserviceService {
 
-  private urlBase = "";
+  private urlBase = "http://localhost:9090/bug";
   constructor(private httpCli: HttpClient) { }
 
   public getAllBugs(): Observable<any> {

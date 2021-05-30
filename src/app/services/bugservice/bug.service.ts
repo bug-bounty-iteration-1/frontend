@@ -21,7 +21,7 @@ export class BugService {
       })
     };
 
-    return this.httpCli.get<Bug[]>(this.urlBase + "/accepted", httpHead);
+    return this.httpCli.get<Bug[]>(this.urlBase, httpHead);
   }
 
 

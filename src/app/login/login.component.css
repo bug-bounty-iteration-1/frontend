@@ -8,3 +8,12 @@ padding: 10vh 0;
     padding: 15px;
     margin: 0 auto;
 }
+
+.revature-logo {
+    max-height: 70px;
+    padding: 2vh;
+}
+
+.welcome-banner {
+    color: var(--orange);
+}

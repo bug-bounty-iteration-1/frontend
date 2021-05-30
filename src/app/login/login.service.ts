@@ -8,9 +8,9 @@ import { User } from '../user';
 })
 export class LoginService {
 
-
   constructor(private _http:HttpClient) { }
   public loginUserFromRemote(user: User):Observable<any> {
     return this._http.post<any>("http://",user)
   }
 }
+
