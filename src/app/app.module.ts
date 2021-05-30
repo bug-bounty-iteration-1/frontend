@@ -15,6 +15,7 @@ import { AdminnavComponent } from './adminnav/adminnav.component';
 import { GlobalstylesComponent } from './globalstyles/globalstyles.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { ProfilePictureComponent } from './profile/profile-picture/profile-picture.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RouterModule } from '@angular/router';
     UsernavComponent,
     AdminnavComponent,
     GlobalstylesComponent,
-    FooterComponent
+    FooterComponent,
+    ProfilePictureComponent
   ],
   imports: [
     BrowserModule,
