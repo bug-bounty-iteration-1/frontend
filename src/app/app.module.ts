@@ -13,9 +13,11 @@ import { BugreportsComponent } from './bugreports/bugreports.component';
 import { UsernavComponent } from './usernav/usernav.component';
 import { AdminnavComponent } from './adminnav/adminnav.component';
 import { GlobalstylesComponent } from './globalstyles/globalstyles.component';
+import { ProfilePictureComponent } from './profile/profile-picture/profile-picture.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileSolutionsComponent } from './profile/profile-solutions/profile-solutions.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { HttpClientModule } from '@angular/common/http';
     UsernavComponent,
     AdminnavComponent,
     GlobalstylesComponent,
-    FooterComponent
+    FooterComponent,
+    ProfilePictureComponent,
+    ProfileSolutionsComponent
   ],
   imports: [
     BrowserModule,
