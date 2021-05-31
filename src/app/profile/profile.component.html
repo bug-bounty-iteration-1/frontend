@@ -1,4 +1,68 @@
-<div class="container p-5">
+<div>
+    <app-usernav></app-usernav> 
+</div>   
+
+<div></div>
+
+<div class="container">
+ 
+  <div id="profileHalf">
+      <div id="AboutMeDiv">
+
+           <div id="titleDiv"><h1>User</h1></div> 
+
+          <!-- <h1>{{userName}}</h1> -->
+      </div>
+      <div id="pointsDiv">
+          <h3>Points</h3>
+          <!-- <h1>{{points}}</h1> -->
+      </div>
+
+  
+      <div id="profileLeftColumn">
+
+          <div id="profilePicDiv">
+              <app-profile-picture [firstLetter]="firstLetter" [lastLetter]="lastLetter"></app-profile-picture>  
+              
+             <!-- <img id="profilePic" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" alt="Profile Pic">  -->
+              
+          </div>
+
+         
+      </div>
+
+  </div>
+<br><br>
+<section>
+
+  <div id="bugTableDiv">
+    <app-profile-reports></app-profile-reports>   
+  </div>
+  
+
+  <div id="solutionTableDiv" style="margin-right: 500px;">
+    
+    <div class="m-4" *ngFor="let solutions of solutionArray">
+    <table class="table">
+        <app-profile-solutions [bugName]="solutions.bugName" 
+        [bugLink]="solutions.bugLink" 
+        [solutionText]="solutions.solutionText" 
+        [solutionStatus]="solutions.solutionStatus">
+        </app-profile-solutions>
+    </table>
+    </div> 
+    
+      <!-- <app-profile-solutions></app-profile-solutions> -->
+  </div>
+
+</section>  
+
+<div>
+    <app-footer></app-footer>
+</div>
+
+
+<!-- <div class="container p-5">
     <app-profile-picture [firstLetter]="firstLetter" [lastLetter]="lastLetter"></app-profile-picture>
 <div class="m-4" *ngFor="let solutions of solutionArray">
     <app-profile-solutions [bugName]="solutions.bugName" 
@@ -9,4 +73,4 @@
 </div>
 </div>
 
-<app-footer></app-footer>
+<app-footer></app-footer> -->
