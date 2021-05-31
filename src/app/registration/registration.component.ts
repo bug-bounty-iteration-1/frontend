@@ -14,7 +14,6 @@ export class RegistrationComponent implements OnInit {
   ngOnInit(): void {
   }
 
- 
 
   userGroup = new FormGroup({
     firstName: new FormControl(''),
