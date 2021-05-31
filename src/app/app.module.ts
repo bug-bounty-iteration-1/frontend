@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -19,7 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfilePictureComponent } from './profile/profile-picture/profile-picture.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProfileSolutionsComponent } from './profile/profile-solutions/profile-solutions.component';
-import { RegisterComponent } from './register/register.component';
+import { RegistrationComponent } from './registration/registration.component';
+
+
 
 @NgModule({
   declarations: [
@@ -37,8 +38,7 @@ import { RegisterComponent } from './register/register.component';
     FooterComponent,
     ProfilePictureComponent,
     ProfileSolutionsComponent,
-    RegisterComponent,
-
+    RegistrationComponent,
 
   ],
   imports: [
