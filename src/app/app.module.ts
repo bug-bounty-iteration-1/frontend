@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfilePictureComponent } from './profile/profile-picture/profile-picture.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProfileSolutionsComponent } from './profile/profile-solutions/profile-solutions.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ProfileSolutionsComponent } from './profile/profile-solutions/profile-s
     FooterComponent,
     ProfilePictureComponent,
     ProfileSolutionsComponent,
+    RegisterComponent,
 
   ],
   imports: [

@@ -14,6 +14,7 @@ export class UserhomeComponent implements OnInit {
   display = "none";
   detail= "none";
 
+
   ngOnInit(): void {
 
     this.bServ.getAllBugs().subscribe(
@@ -23,7 +24,11 @@ export class UserhomeComponent implements OnInit {
       }
     )
   }
- 
+  bugToUpdate = {
+    bugId: "",
+    bugDescription: ""
+  }
+
   openModal() {
     this.display = "block";
   }
@@ -31,9 +36,10 @@ export class UserhomeComponent implements OnInit {
     this.display = "none";
   }
 
-  openDetailsModal() {
+  openDetailsModal(bug) {
     this.detail = "block";
-    
+    this.bugToUpdate = bug;
+ 
   }
 
   closeDetailsModal(){
