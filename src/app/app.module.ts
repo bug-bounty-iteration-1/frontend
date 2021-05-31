@@ -39,6 +39,7 @@ import { RegisterComponent } from './register/register.component';
     ProfileSolutionsComponent,
     RegisterComponent,
 
+
   ],
   imports: [
     BrowserModule,
