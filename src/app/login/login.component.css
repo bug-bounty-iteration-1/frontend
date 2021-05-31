@@ -1,0 +1,19 @@
+.container-new{
+padding: 10vh 0;
+}
+
+.form-signin{
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.revature-logo {
+    max-height: 70px;
+    padding: 2vh;
+}
+
+.welcome-banner {
+    color: var(--orange);
+}

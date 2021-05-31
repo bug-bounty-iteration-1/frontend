@@ -1,14 +1,17 @@
+
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { register } from './register';
 // import { registerservice } from './register.service';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
 
 
 export class RegisterComponent  {
@@ -44,4 +47,5 @@ export class RegisterComponent  {
   //   );
   // }
 }
+
 

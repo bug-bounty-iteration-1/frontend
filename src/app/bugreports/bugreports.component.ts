@@ -1,13 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BuglistserviceService } from './buglistservice.service';
-
-interface Bug {
-  id: number;
-  name: string;
-  description: string;
-  date: string;
-  status: string;
-}
+import { Bug } from '../services/bugservice/bug';
+import { BugService } from '../services/bugservice/bug.service';
 
 @Component({
   selector: 'app-bugreports',
@@ -17,25 +10,18 @@ interface Bug {
 
 export class BugreportsComponent implements OnInit {
 
-  
-  bugsList:Bug[]=[{
-    id:1,
-    name:"Mantesh",
-    description:"bugReport backend not complete",
-    date:"2021/05/29",
-    status:"pending"
-  }];
+  bugList: Bug[];
 
-  constructor(private bServ :BuglistserviceService ) { }
+  constructor(private bServ :BugService ) { }
 
   ngOnInit(): void {
      this.bServ.getAllBugs().subscribe(
       response =>{
         console.log(response);
         
-        this.bugsList=response;
+        this.bugList=response;
       }); 
-      console.log(this.bugsList);
+      console.log(this.bugList);
   }
   reloadCurrentPage() {
     window.location.reload();

@@ -9,7 +9,7 @@ import { MetricsComponent } from './metrics/metrics.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {path: '', component:LoginComponent},
   {path: 'userhome', component: UserhomeComponent},
   {path: 'adminhome', component: AdminhomeComponent},
