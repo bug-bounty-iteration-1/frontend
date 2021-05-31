@@ -54,6 +54,7 @@ export class UserhomeComponent implements OnInit {
     this.bServ.createBug(bug).subscribe(response => {
       // console.log(response);
     });
+    window.location.reload();
     
   }
 
