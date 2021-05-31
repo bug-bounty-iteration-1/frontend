@@ -13,6 +13,7 @@ export class UserhomeComponent implements OnInit {
   constructor(private bServ: BugService) { }
   display = "none";
   detail= "none";
+  bugModel : Partial<Bug>;
 
 
   ngOnInit(): void {
@@ -44,6 +45,16 @@ export class UserhomeComponent implements OnInit {
 
   closeDetailsModal(){
     this.detail = "none";
+  }
+
+  submitBug(bug){
+    let date = new Date();
+    bug.bugSubmissionDate = date;
+    bug.bugOwner = {userId: 1}
+    this.bServ.createBug(bug).subscribe(response => {
+      // console.log(response);
+    });
+    
   }
 
 }

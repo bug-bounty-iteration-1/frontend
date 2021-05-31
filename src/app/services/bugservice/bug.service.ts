@@ -31,4 +31,8 @@ export class BugService {
     return this.httpCli.put(this.urlBase + '/approve', bug)
   }
 
+  public createBug(bug) {
+    return this.httpCli.post(this.urlBase + '/new-bug', bug)
+  }
+
 }

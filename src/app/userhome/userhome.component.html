@@ -66,10 +66,10 @@
                              
                             </div>
                    <div class="modal-body">
-                    <form>
+                    <form (ngSubmit)="submitBug(bug.value)" #bug='ngForm' >
                         <div class="form-group">
                           <label for="exampleInputEmail1">Bug Description</label>
-                          <textarea type="test" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                          <textarea [ngModel]="bugModel?.bugDescription" name="bugDescription" type="test" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                           </textarea>
                         </div>
   

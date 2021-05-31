@@ -13,6 +13,7 @@ import { UsernavComponent } from './usernav/usernav.component';
 import { AdminnavComponent } from './adminnav/adminnav.component';
 import { GlobalstylesComponent } from './globalstyles/globalstyles.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfilePictureComponent } from './profile/profile-picture/profile-picture.component';
@@ -47,6 +48,7 @@ import { RegistrationComponent } from './registration/registration.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     HttpClientModule
   ],
