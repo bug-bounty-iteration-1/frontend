@@ -18,13 +18,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfilePictureComponent } from './profile/profile-picture/profile-picture.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProfileSolutionsComponent } from './profile/profile-solutions/profile-solutions.component';
-<<<<<<< HEAD
 import { ProfileReportsComponent } from './profile/profile-reports/profile-reports.component';
-=======
 import { RegistrationComponent } from './registration/registration.component';
 
 
->>>>>>> main
 
 @NgModule({
   declarations: [
@@ -42,11 +39,8 @@ import { RegistrationComponent } from './registration/registration.component';
     FooterComponent,
     ProfilePictureComponent,
     ProfileSolutionsComponent,
-<<<<<<< HEAD
     ProfileReportsComponent,
-=======
     RegistrationComponent,
->>>>>>> main
 
   ],
   imports: [
