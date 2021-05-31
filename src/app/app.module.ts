@@ -19,6 +19,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileSolutionsComponent } from './profile/profile-solutions/profile-solutions.component';
 import { RegisterComponent } from './register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,14 +36,15 @@ import { RegisterComponent } from './register/register.component';
     GlobalstylesComponent,
     FooterComponent,
     ProfilePictureComponent,
-    ProfileSolutionsComponent
-RegisterComponent
+    ProfileSolutionsComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { register } from './register';
-// import { registerservice } from './register.service';
+import { registerservice } from './register.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -11,37 +11,37 @@ import { register } from './register';
 })
 
 
-export class RegisterComponent  {
+export class RegisterComponent implements OnInit {
 
   reglist: register[] = [];
-
-  foodGroup = new FormGroup({
+//firstName
+    userObj = new FormGroup({
     firstName: new FormControl(''),
-    email: new FormControl(''),
+    //email: new FormControl(''),
     password: new FormControl(''),
-    username: new FormControl(''),
+    userName: new FormControl(''),
     lastName: new FormControl('')
   });
 
-  // constructor(private foodServ: registerservice,private router:Router) { }
+   constructor(private regServ: registerservice,private router:Router) { }
 
   ngOnInit(): void {
 
   }
 
-  // public submitFood(food: FormGroup){
-  //   console.log('button clicked');
-  //   console.log(food);
-  //   let stringFood = JSON.stringify(food.value);
-  //   this.foodServ.postFood(stringFood).subscribe(
-  //     response => {
-  //       console.log(response);
-  //       console.log("nai");
-  //       this.reglist.push(response);
-  //       this.router.navigate(['login']);
+   public submitReg(reg: FormGroup){
+     console.log('button clicked');
+     console.log(reg);
+     let stringFood = JSON.stringify(reg.value);
+     this.regServ.postUser(stringFood).subscribe(
+       response => {
+         console.log(response);
+         console.log("nai");
+         this.reglist.push(response);
+         this.router.navigate(['login']);
 
-  //     }
-  //   );
-  // }
+       }
+     );
+   }
 }
 
