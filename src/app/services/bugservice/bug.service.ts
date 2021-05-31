@@ -24,5 +24,11 @@ export class BugService {
     return this.httpCli.get<Bug[]>(this.urlBase, httpHead);
   }
 
+  public approveBug(bug) {
+    return this.httpCli.put(this.urlBase + '/approve', bug)
+  }
+  public denyBug(bug) {
+    return this.httpCli.put(this.urlBase + '/approve', bug)
+  }
 
 }

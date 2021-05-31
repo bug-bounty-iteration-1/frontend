@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Bug } from '../services/bugservice/bug';
 import { BugService } from '../services/bugservice/bug.service';
 
@@ -12,6 +13,7 @@ export class UserhomeComponent implements OnInit {
   constructor(private bServ: BugService) { }
   display = "none";
   detail= "none";
+
   ngOnInit(): void {
 
     this.bServ.getAllBugs().subscribe(

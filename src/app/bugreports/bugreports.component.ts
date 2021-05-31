@@ -1,13 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BuglistserviceService } from './buglistservice.service';
 import { Bug } from '../services/bugservice/bug';
-/*interface Bug {
-  id: number;
-  name: string;
-  description: string;
-  date: string;
-  status: string;
-}*/
+import { BugService } from '../services/bugservice/bug.service';
 
 @Component({
   selector: 'app-bugreports',
@@ -19,7 +12,7 @@ export class BugreportsComponent implements OnInit {
 
   bugList: Bug[];
 
-  constructor(private bServ :BuglistserviceService ) { }
+  constructor(private bServ :BugService ) { }
 
   ngOnInit(): void {
      this.bServ.getAllBugs().subscribe(

@@ -1,0 +1,89 @@
+<app-adminnav></app-adminnav>
+
+<div class="container p-5 m-5">
+
+    <h2 class="title p-2">Bug Feed</h2>
+
+    <button type="button" class="btn btn-primary mybtn orange-button m-2"  (click)="openModal()">+</button>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col" *ngFor="let bug of bugList">
+          <div class="card">
+            <div class="card-body">
+              
+              <p class="card-text">{{bug.bugDescription}}</p>
+              <a (click)="openDetailsModal()"><p>...</p></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+              <!--Bug Details modal-->
+              <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':detail}">
+                <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Bug Report</h4>
+                    </div>
+                    <div class="container">
+                      <p>Bug description will go</p>
+                    </div>
+                    <div class="container">
+                        <hr>
+                      <h4 class="sub-title">Solutions</h4>
+                      <div class="card border-dark mb-3" style="max-height: 20rem;">
+                        <div class="card-header"><small>Author - Submission Date</small></div>
+                        <div class="card-body text-dark">
+                          <p class="card-text">Solution Description will go here</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="container">
+                        <hr>
+                      <form>
+                        <div class="mb-3">
+                          <label for="exampleFormControlTextarea1" class="form-label">Add a Solution</label>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                      </form>
+                    </div>
+                    
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" (click)="closeDetailsModal()" >Close</button>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+      <!--Modal-->
+    <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+        <div class="modal-dialog" role="document">
+                 <div class="modal-content">
+                       <div class="modal-header">
+                           <h4 class="modal-title">Create Bug Report</h4>
+                             <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                   <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Bug Description</label>
+                          <textarea type="test" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                          </textarea>
+                        </div>
+  
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+   
+                     <div>
+                     </div>
+                     </div>
+                       <div class="modal-footer">
+                         <button type="button" class="btn btn-default" (click)="onCloseHandled()" >Close</button>
+                       </div>
+               </div>
+         </div>  
+       </div>
+  
+
+</div>
+<app-footer></app-footer>

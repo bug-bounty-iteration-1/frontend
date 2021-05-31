@@ -19,8 +19,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfilePictureComponent } from './profile/profile-picture/profile-picture.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProfileSolutionsComponent } from './profile/profile-solutions/profile-solutions.component';
-import { RegistrationComponent } from './registration/registration.component';
-
 
 @NgModule({
   declarations: [
@@ -38,7 +36,7 @@ import { RegistrationComponent } from './registration/registration.component';
     FooterComponent,
     ProfilePictureComponent,
     ProfileSolutionsComponent,
-    RegistrationComponent
+
   ],
   imports: [
     BrowserModule,

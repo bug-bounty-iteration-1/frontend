@@ -23,6 +23,7 @@
       <small class = "text-danger" [class.d-none]="passWord.valid || passWord.untouched">Password is required.</small>
     </div>
       <small class="text-danger">{{message}}</small>
+      <small> Not yet a member? Register <a routerLink="/register">here</a></small>
       <br>
       <button [disabled]="login.form.invalid" type="submit" class="btn btn-primary  mybtn darkgrey-button m-2">Sign in</button>
    </form>
