@@ -7,7 +7,7 @@
     <button type="button" class="btn btn-primary mybtn orange-button m-2"  (click)="openModal()">+</button>
     <div class="row row-cols-1 row-cols-md-4 g-2">
         <div class="col" *ngFor="let bug of bugList">
-          <div class="card" *ngIf="bug.bugStatus.status==='Pending'">
+          <div class="card" *ngIf="bug.bugStatus.status==='Accepted'">
             <div class="card-body">
               <p class="card-text">{{bug.bugDescription}}</p>
               <button class="btn btn-primary" (click)="openDetailsModal()">Show Details</button>
