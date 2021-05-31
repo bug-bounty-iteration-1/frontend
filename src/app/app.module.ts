@@ -12,14 +12,14 @@ import { BugreportsComponent } from './bugreports/bugreports.component';
 import { UsernavComponent } from './usernav/usernav.component';
 import { AdminnavComponent } from './adminnav/adminnav.component';
 import { GlobalstylesComponent } from './globalstyles/globalstyles.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfilePictureComponent } from './profile/profile-picture/profile-picture.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProfileSolutionsComponent } from './profile/profile-solutions/profile-solutions.component';
 import { ProfileReportsComponent } from './profile/profile-reports/profile-reports.component';
-import { RegistrationComponent } from './registration/registration.component';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -40,7 +40,7 @@ import { RegistrationComponent } from './registration/registration.component';
     ProfilePictureComponent,
     ProfileSolutionsComponent,
     ProfileReportsComponent,
-    RegistrationComponent,
+    RegisterComponent,
 
   ],
   imports: [
@@ -48,7 +48,8 @@ import { RegistrationComponent } from './registration/registration.component';
     AppRoutingModule,
     FormsModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
