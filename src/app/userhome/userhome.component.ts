@@ -19,8 +19,12 @@ export class UserhomeComponent implements OnInit {
   display = "none";
   detail= "none";
   solution= new Solutions();
+
   solutionList: Array<Solutions>;
   
+
+  msg;
+
   ngOnInit(): void {
     
     this.bServ.getAllBugs().subscribe(
@@ -70,6 +74,9 @@ export class UserhomeComponent implements OnInit {
     this.sServ.newSolution(this.solution).subscribe(
       response => {
         console.log(response);
+        if(response=-1){
+          this.msg="You cannot solve your own bug";
+        }
       }
     )
 
