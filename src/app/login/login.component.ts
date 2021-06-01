@@ -12,9 +12,11 @@ export class LoginComponent implements OnInit {
   message="";
   userName="";
   password="";
+
   user = new User();
   currentRole="";
   roleId: number;
+
   passChange(temp:any){
     this.password=temp.target.value;
   }
@@ -37,6 +39,13 @@ export class LoginComponent implements OnInit {
         this.roleId = response.currentRole.roleId;
         console.log(response.currentRole.role)
         localStorage.setItem('userRole',(response.currentRole.role));
+        localStorage.setItem('role', this.currentRole);
+        localStorage.setItem('firstName', response.firstName);
+        localStorage.setItem('lastName', response.lastName);
+        localStorage.setItem('user', JSON.stringify(response));
+
+        console.log(this.currentRole);
+
         if(this.roleId === 2){
           this._route.navigate(['./userhome']);
         }
