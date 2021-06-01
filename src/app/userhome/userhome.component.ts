@@ -19,7 +19,12 @@ export class UserhomeComponent implements OnInit {
   display = "none";
   detail= "none";
   solution= new Solutions();
+
+  solutionList: Array<Solutions>;
+  
+
   msg;
+
   ngOnInit(): void {
     
     this.bServ.getAllBugs().subscribe(
@@ -45,6 +50,8 @@ export class UserhomeComponent implements OnInit {
   openDetailsModal(bug) {
     this.detail = "block";
     this.bugToUpdate = bug;
+    this.sServ.getBugSolutions(bug.bugId).subscribe(x => this.solutionList = x);
+    console.log(this.solutionList);
  
   }
 
