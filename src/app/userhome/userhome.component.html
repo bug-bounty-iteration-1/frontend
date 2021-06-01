@@ -10,7 +10,7 @@
           <div class="card" *ngIf="bug.bugStatus.status==='Accepted'">
             <div class="card-body">
               <p class="card-text">{{bug.bugDescription}}</p>
-              <button class="btn btn-primary" (click)="openDetailsModal()">Show Details</button>
+              <button class="btn btn-primary" (click)="openDetailsModal(bug)">Show Details</button>
             </div>
           </div>
         </div>
@@ -25,7 +25,9 @@
                     </div>
                     <div class="container">
                         <form>
-                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" disabled></textarea>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">
+                            {{bugToUpdate.bugDescription}}
+                          </textarea>
                         </form>
 
                     </div>
