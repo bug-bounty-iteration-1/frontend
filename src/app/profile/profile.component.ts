@@ -8,8 +8,13 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
 
-  firstLetter: String = "S"
-  lastLetter: String = "Z"
+  role = localStorage.getItem('role');
+  userName = localStorage.getItem('userName');
+  firstName = localStorage.getItem('firstName');
+  lastName = localStorage.getItem('lastName');
+
+  firstLetter = this.firstName[0];
+  lastLetter=this.lastName[0];
   solutionArray: Array<{ bugName: String, bugLink: String, solutionText: String, solutionStatus: String }>
   = [
     {bugName: 'Vestibulum at eros 1', bugLink: 'Dapibus ac facilisis in 1',
@@ -24,7 +29,6 @@ export class ProfileComponent implements OnInit {
      solutionText: 'Cras justo odio 5', solutionStatus: 'Approved' },
 
   ]
-
 
   constructor() { }
 

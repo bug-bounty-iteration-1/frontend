@@ -17,9 +17,7 @@ export class ProfileReportsComponent implements OnInit {
   ngOnInit(): void {
      this.bServ.getAllBugs().subscribe(
       response =>{
-        console.log(response);
-        
-        this.bugList=response;
+      this.bugList = response; 
       }); 
       console.log(this.bugList);
   }

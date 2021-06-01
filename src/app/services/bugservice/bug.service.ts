@@ -11,6 +11,7 @@ import { Bug } from './bug';
 export class BugService {
   
  bug=new Bug();
+ user = localStorage.getItem('user');
 
   private urlBase="http://localhost:9090/bug";
   private urlBase2="http://localhost:9090/bug/update-bugStatus";
@@ -27,8 +28,8 @@ export class BugService {
     return this.httpCli.get<Bug[]>(this.urlBase, httpHead);
   }
 
-  public approveBug(bug) {
 
+  public approveBug(bug) {
 
     console.log(bug);
     return this.httpCli.post(this.urlBase2,bug)
@@ -41,5 +42,6 @@ export class BugService {
     console.log(bug);
     return this.httpCli.post(this.urlBase2,bug)
   }
+
 
 }
