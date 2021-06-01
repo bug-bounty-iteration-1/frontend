@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { MetricsComponent } from './metrics/metrics.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthgaurdService } from './services/bugservice/authgaurd.service';
+import { RegistrationComponent } from './registration/registration.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 
 
@@ -20,7 +21,8 @@ export const routes: Routes = [
  // {path: 'bugreports', component: BugreportsComponent, canActivate: [ AuthgaurdService] },
   {path: 'leaderboard', component: LeaderboardComponent},
   {path: 'metrics', component: MetricsComponent},
-  {path: 'globalstyles', component: GlobalstylesComponent}
+  {path: 'globalstyles', component: GlobalstylesComponent},
+  {path: 'registration', component: RegistrationComponent}
 ];
 
 @NgModule({

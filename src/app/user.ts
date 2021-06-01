@@ -5,7 +5,7 @@ export class User{
     lastName: string;
     userName: string;
     passWord: string;
-    currentRole:Role;
+    currentRole: Role
 
     constructor(){};
 }

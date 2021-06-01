@@ -1,6 +1,8 @@
-export class Role  {
-constructor(
-    public roleId: number,
-    public status: String
-){}
+export class Role {
+    constructor(
+        public roleId: number,
+        public role: String
+    ) {
+
+    }
 }
