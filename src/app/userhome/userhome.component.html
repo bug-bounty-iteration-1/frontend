@@ -43,11 +43,11 @@
                     </div>
                     <div class="container">
                       <hr>
-                      <form>
+                      <form (ngSubmit)="submitSolution(bugToUpdate.bugId,sol.value,bugToUpdate.bugOwner)">
                         <div class="mb-3">
                           <label for="exampleFormControlTextarea1" class="form-label">Add a Solution</label>
-                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                          <button type="submit" class="btn btn-primary">Submit</button>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" #sol></textarea>
+                          <button type="submit" class="btn btn-primary" >Submit</button>
                         </div>
                       </form>
                     </div>

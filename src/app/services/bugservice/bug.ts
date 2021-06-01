@@ -1,3 +1,4 @@
+import { BugOwner } from "./bugOwner";
 import { Status } from "./status";
 
 export class Bug {
@@ -6,6 +7,6 @@ export class Bug {
         public bugDescription: String;
         public bugSubmissionDate: Date;
         public bugStatus: Status;
-        public bugOwner:string;
+        public bugOwner:BugOwner;
         constructor(){};
 }

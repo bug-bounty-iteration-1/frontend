@@ -32,11 +32,11 @@ export class LoginComponent implements OnInit {
       response => {
         this.user = response;
         localStorage.setItem('userName',this.user.userName);
-
+        localStorage.setItem('userId',this.user.userId.toString());
         this.currentRole = response.currentRole.role;
         this.roleId = response.currentRole.roleId;
         console.log(response.currentRole.role)
-        // localStorage.setItem('userRole',this.userRole);
+        localStorage.setItem('userRole',(response.currentRole.role));
         if(this.roleId === 2){
           this._route.navigate(['./userhome']);
         }
