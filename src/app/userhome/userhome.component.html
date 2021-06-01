@@ -34,10 +34,10 @@
                     <div class="container">
                       <hr>
                       <h4 class="sub-title">Solutions</h4>
-                      <div class="card border-dark mb-3" style="max-height: 20rem;">
-                        <div class="card-header"><small>Author - Submission Date</small></div>
+                      <div *ngFor="let solution of solutionList" class="card border-dark mb-3" style="max-height: 20rem;">
+                        <div class="card-header"><small>Author: {{solution.user.userName}} - Date: {{solution.solutionSubmissionDate}}</small></div>
                         <div class="card-body text-dark">
-                          <p class="card-text">Solution Description will go here</p>
+                            <app-home-solutions-list [solution]="solution"></app-home-solutions-list>
                         </div>
                       </div>
                     </div>
