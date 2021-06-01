@@ -6,7 +6,6 @@ export class User{
     lastName: string;
     userName: string;
     passWord: string;
-    currentRole: Role
-    public userId?: number
+    currentRole: Role;
     constructor(){};
 }
