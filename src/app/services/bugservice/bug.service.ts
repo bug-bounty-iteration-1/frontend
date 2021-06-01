@@ -34,7 +34,6 @@ export class BugService {
     console.log(bug);
     return this.httpCli.post(this.urlBase2,bug)
 
-    return this.httpCli.put(this.urlBase + '/update-bugStatus', bug)
 
   }
   public denyBug(bug) {
