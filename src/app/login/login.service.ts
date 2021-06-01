@@ -10,8 +10,8 @@ import { Role } from '../role'
 export class LoginService {
 
   constructor(private _http:HttpClient) { }
-  public loginUserFromRemote(user: User):Observable<any> {
-    return this._http.post<any>("http://",user)
+  public loginUserFromRemote(userName: string, password:string):Observable<any> {
+    return this._http.post<any>(`http://localhost:8090/logindetail?username=${userName}&password=${password}`, {})
   }
 }
 

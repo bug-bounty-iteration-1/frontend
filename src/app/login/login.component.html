@@ -11,14 +11,14 @@
      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 
      <div class="username">
-      <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus="" [(ngModel)]="user.userName" name="userName"  #userName="ngModel"
+      <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus="" (change)="userChange($event)" [(ngModel)]="user.userName" name="userName"  #userName="ngModel"
       [class.is-invalid]="userName.invalid && userName.touched" >
       <small class = "text-danger" [class.d-none]="userName.valid || userName.untouched">Username is required.</small>
     </div>
      <br>
 
      <div class="password">
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required   [(ngModel)]="user.passWord" name="password" #passWord="ngModel"
+      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required (change)="passChange($event)"  [(ngModel)]="user.passWord" name="password" #passWord="ngModel"
       [class.is-invalid]="passWord.invalid && passWord.touched" >
       <small class = "text-danger" [class.d-none]="passWord.valid || passWord.untouched">Password is required.</small>
     </div>

@@ -10,9 +10,16 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent implements OnInit {
   message="";
+  userName="";
+  password="";
   user = new User();
-  user2 = new User();
-  userRole = "";
+  userRole="";
+  passChange(temp:any){
+    this.password=temp.target.value;
+  }
+  userChange(temp:any){
+    this.userName=temp.target.value;
+  }
   constructor(private _service:LoginService ,private _route:Router) { }
 
   ngOnInit(): void {
@@ -20,13 +27,13 @@ export class LoginComponent implements OnInit {
 
   submit(login){
 
-    this._service.loginUserFromRemote(this.user).subscribe(
+    this._service.loginUserFromRemote(this.userName, this.password).subscribe(
       response => {
-        this.user2 = response;
+        this.user = response;
         localStorage.setItem('userName',this.user.userName);
 
-        this.userRole = response.role;
-        localStorage.setItem('userRole',this.userRole);
+        this.userRole = response.currentRole.role;
+        // localStorage.setItem('userRole',this.userRole);
         if(this.userRole = "user"){
           this._route.navigate(['./userhome']);
         }

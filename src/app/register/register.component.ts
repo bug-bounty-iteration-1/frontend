@@ -15,7 +15,6 @@ export class RegisterComponent implements OnInit {
 //firstName
     userObj = new FormGroup({
     firstName: new FormControl(''),
-    //email: new FormControl(''),
     password: new FormControl(''),
     userName: new FormControl(''),
     lastName: new FormControl('')
@@ -28,15 +27,12 @@ export class RegisterComponent implements OnInit {
   }
 
    public submitReg(reg: FormGroup){
-     console.log('button clicked');
-     console.log(reg);
      let stringFood = JSON.stringify(reg.value);
      this.regServ.postUser(stringFood).subscribe(
        response => {
          console.log(response);
-         console.log("nai");
          this.reglist.push(response);
-         this.router.navigate(['login']);
+         this.router.navigate(['./login']);
 
        }
      );

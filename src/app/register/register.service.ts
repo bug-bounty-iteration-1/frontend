@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { from, Observable } from 'rxjs';
 import { register } from './register'
 import {Role} from './role'
 
@@ -9,19 +9,8 @@ import {Role} from './role'
 })
 export class registerservice {
 
-  private urlBase = "http://localhost:9010/login/register";
+  private urlBase =  `http://localhost:8090/registration`;
   constructor(private httpCli: HttpClient) { }
-
-  // public getAllFood(): Observable<register[]> {
-  //   const httpHead={
-  //     headers: new HttpHeaders({
-  //     'Content-Type': 'application/json',
-  //     'Access-Control-Allow-Origin':'*'
-  //     })
-  //   }; 
-
-  //   return this.httpCli.get<register[]>(this.urlBase, httpHead);
-  // }
 
   public postUser(register: any): Observable<register>{
     const httpHead={
@@ -30,7 +19,6 @@ export class registerservice {
       'Access-Control-Allow-Origin':'*'
       })
     };
-    console.log("asi");
     return this.httpCli.post<register>(this.urlBase, register, httpHead);
   }
 }
