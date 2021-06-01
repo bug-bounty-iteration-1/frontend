@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   user = new User();
   currentRole="";
   roleId: number;
+
   passChange(temp:any){
     this.password=temp.target.value;
   }
