@@ -13,7 +13,8 @@ export class LoginComponent implements OnInit {
   userName="";
   password="";
   user = new User();
-  userRole="";
+  currentRole="";
+  roleId: number;
   passChange(temp:any){
     this.password=temp.target.value;
   }
@@ -32,12 +33,14 @@ export class LoginComponent implements OnInit {
         this.user = response;
         localStorage.setItem('userName',this.user.userName);
 
-        this.userRole = response.currentRole.role;
+        this.currentRole = response.currentRole.role;
+        this.roleId = response.currentRole.roleId;
+        console.log(response.currentRole.role)
         // localStorage.setItem('userRole',this.userRole);
-        if(this.userRole = "user"){
+        if(this.roleId === 2){
           this._route.navigate(['./userhome']);
         }
-        else if (this.userRole = "admin"){
+        else {
           this._route.navigate(['./adminhome']);
         }
       },

@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
        response => {
          console.log(response);
          this.reglist.push(response);
-         this.router.navigate(['./login']);
+         this.router.navigate(['']);
 
        }
      );
