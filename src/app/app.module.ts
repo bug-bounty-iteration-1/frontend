@@ -21,6 +21,7 @@ import { ProfileSolutionsComponent } from './profile/profile-solutions/profile-s
 import { ProfileReportsComponent } from './profile/profile-reports/profile-reports.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeSolutionsListComponent } from './home-solutions-list/home-solutions-list.component';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 
 
 
@@ -43,6 +44,7 @@ import { HomeSolutionsListComponent } from './home-solutions-list/home-solutions
     ProfileReportsComponent,
     RegisterComponent,
     HomeSolutionsListComponent,
+    AdminProfileComponent,
 
   ],
   imports: [

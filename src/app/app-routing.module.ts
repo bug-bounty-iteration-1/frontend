@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { AdminhomeComponent } from './adminhome/adminhome.component';
 import { BugreportsComponent } from './bugreports/bugreports.component';
 import { GlobalstylesComponent } from './globalstyles/globalstyles.component';
@@ -17,6 +18,7 @@ export const routes: Routes = [
   {path: 'userhome', component: UserhomeComponent},
   {path: 'adminhome', component: AdminhomeComponent},
   {path: 'profile', component: ProfileComponent},
+  {path: 'adminprofile', component: AdminProfileComponent},
   {path: 'bugreports', component: BugreportsComponent},
  // {path: 'bugreports', component: BugreportsComponent, canActivate: [ AuthgaurdService] },
   {path: 'leaderboard', component: LeaderboardComponent},
