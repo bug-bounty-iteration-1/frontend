@@ -20,8 +20,13 @@ import { FooterComponent } from './footer/footer.component';
 import { ProfileSolutionsComponent } from './profile/profile-solutions/profile-solutions.component';
 import { ProfileReportsComponent } from './profile/profile-reports/profile-reports.component';
 import { RegisterComponent } from './register/register.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { SearchfilterPipe } from './searchfilter.pipe';
+
 import { HomeSolutionsListComponent } from './home-solutions-list/home-solutions-list.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+
 
 
 @NgModule({
@@ -42,8 +47,10 @@ import { AdminProfileComponent } from './admin-profile/admin-profile.component';
     ProfileSolutionsComponent,
     ProfileReportsComponent,
     RegisterComponent,
+    SearchfilterPipe,
     HomeSolutionsListComponent,
     AdminProfileComponent,
+
 
   ],
   imports: [
@@ -52,8 +59,7 @@ import { AdminProfileComponent } from './admin-profile/admin-profile.component';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    HttpClientModule,
-    ReactiveFormsModule
+    HttpClientModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
