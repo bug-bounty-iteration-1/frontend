@@ -24,4 +24,8 @@ export class SolutionServiceService {
   public getBugSolutions(bugID): Observable<Solutions[]>{
     return this.httpCli.get<Solutions[]>(this.urlBase + "/" + bugID);
   }
+
+  public approveSolutions(solution) {
+    return this.httpCli.post(this.urlBase + "/update-solution-status", solution);
+  }
 }
