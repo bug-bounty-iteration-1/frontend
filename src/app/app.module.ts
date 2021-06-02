@@ -20,6 +20,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ProfileSolutionsComponent } from './profile/profile-solutions/profile-solutions.component';
 import { ProfileReportsComponent } from './profile/profile-reports/profile-reports.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthgaurdService } from './services/bugservice/authgaurd.service';
 
 
 
@@ -51,7 +52,7 @@ import { RegisterComponent } from './register/register.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{provide: AuthgaurdService, useClass: AuthgaurdService}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
