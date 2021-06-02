@@ -20,6 +20,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ProfileSolutionsComponent } from './profile/profile-solutions/profile-solutions.component';
 import { ProfileReportsComponent } from './profile/profile-reports/profile-reports.component';
 import { RegisterComponent } from './register/register.component';
+import { HomeSolutionsListComponent } from './home-solutions-list/home-solutions-list.component';
 
 
 
@@ -41,6 +42,7 @@ import { RegisterComponent } from './register/register.component';
     ProfileSolutionsComponent,
     ProfileReportsComponent,
     RegisterComponent,
+    HomeSolutionsListComponent,
 
   ],
   imports: [

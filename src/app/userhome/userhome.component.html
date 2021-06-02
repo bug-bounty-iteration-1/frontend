@@ -34,20 +34,20 @@
                     <div class="container">
                       <hr>
                       <h4 class="sub-title">Solutions</h4>
-                      <div class="card border-dark mb-3" style="max-height: 20rem;">
-                        <div class="card-header"><small>Author - Submission Date</small></div>
+                      <div *ngFor="let solution of solutionList" class="card border-dark mb-3" style="max-height: 20rem;">
+                        <div class="card-header"><small>Author: {{solution.user.userName}} - Date: {{solution.solutionSubmissionDate}}</small></div>
                         <div class="card-body text-dark">
-                          <p class="card-text">Solution Description will go here</p>
+                            <app-home-solutions-list [solution]="solution"></app-home-solutions-list>
                         </div>
                       </div>
                     </div>
                     <div class="container">
                       <hr>
-                      <form>
+                      <form (ngSubmit)="submitSolution(bugToUpdate.bugId,sol.value,bugToUpdate.bugOwner)">
                         <div class="mb-3">
                           <label for="exampleFormControlTextarea1" class="form-label">Add a Solution</label>
-                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                          <button type="submit" class="btn btn-primary">Submit</button>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" #sol></textarea>
+                          <button type="submit" class="btn btn-primary" >Submit</button>
                         </div>
                       </form>
                     </div>
@@ -87,6 +87,7 @@
                        <div class="modal-footer">
                          <button type="button" class="btn btn-default" (click)="onCloseHandled()" >Close</button>
                        </div>
+                       <span>{{msg}}</span>
                </div>
          </div>  
        </div>
