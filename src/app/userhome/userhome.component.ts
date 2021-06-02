@@ -19,6 +19,8 @@ export class UserhomeComponent implements OnInit {
   display = "none";
   detail= "none";
   solution= new Solutions();
+  currentUserId: number = 3;
+  currentBugOwnerId: number;
 
   solutionList: Array<Solutions>;
   
@@ -33,11 +35,12 @@ export class UserhomeComponent implements OnInit {
         this.bugList = response;
       }
     )
+    // this.currentUserId = parseInt(localStorage.getItem('userId'));
   }
   bugToUpdate = {
     bugId: "",
     bugDescription: "",
-    bugOwner:BugOwner
+    bugOwner : BugOwner
   }
 
   openModal() {
@@ -50,8 +53,12 @@ export class UserhomeComponent implements OnInit {
   openDetailsModal(bug) {
     this.detail = "block";
     this.bugToUpdate = bug;
+    console.log(this.bugToUpdate);
     this.sServ.getBugSolutions(bug.bugId).subscribe(x => this.solutionList = x);
     console.log(this.solutionList);
+    //untyping bugOwner to access userId field
+    let owner : any = this.bugToUpdate.bugOwner;
+    this.currentBugOwnerId = owner.userId;
  
   }
 
@@ -80,6 +87,16 @@ export class UserhomeComponent implements OnInit {
       }
     )
 
+  }
+
+  approveSolution(solution){
+    solution.solutionStatus = true;
+    this.sServ.approveSolutions(solution).subscribe(
+      res => {
+        console.log(res);
+      }
+    );
+    window.location.reload;
   }
 
 }
