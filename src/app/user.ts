@@ -6,5 +6,6 @@ export class User{
     userName: string;
     passWord: string;
     currentRole: Role;
+    userId: number
     constructor(){};
 }
