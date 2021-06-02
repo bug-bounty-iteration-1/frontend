@@ -17,7 +17,6 @@ export class BugreportsComponent implements OnInit {
   isShow2:boolean= false;
   searchValue:string;
 
-  constructor(private bServ :BugService) { }
 
   bug= new Bug();
   constructor(private bServ :BugService ) { }
@@ -29,34 +28,22 @@ export class BugreportsComponent implements OnInit {
       response =>{
         console.log(response);
         
-        //this.bugList=response;
-        this.bugList= [
-          { bugId: 123, bugDescription: 'Testing note 1', bugSubmissionDate: null, bugStatus: null },
-          { bugId: 123, bugDescription: 'Testing note 1', bugSubmissionDate: null, bugStatus: null },
-          { bugId: 123, bugDescription: 'Testing note 1', bugSubmissionDate: null, bugStatus: null },
-          { bugId: 123, bugDescription: 'Testing note 1', bugSubmissionDate: null, bugStatus: null },
-          { bugId: 355, bugDescription: 'Testing note 2', bugSubmissionDate: null, bugStatus:null },
-          { bugId: 456, bugDescription: 'Testing note 3', bugSubmissionDate: null, bugStatus:null  },
-        ];
+        this.bugList=response;
       }); 
-      console.log(this.bugList);
+      
   }
-  
   
   setValue()
   {
     this.isShow1 =!this.isShow1;
     this.isShow2 =false;
-
-    this.bugList= [
-      { bugId: 123, bugDescription: 'Testing note 1', bugSubmissionDate: null, bugStatus: null },
-      { bugId: 123, bugDescription: 'Testing note 1', bugSubmissionDate: null, bugStatus: null },
-      { bugId: 123, bugDescription: 'Testing note 1', bugSubmissionDate: null, bugStatus: null },
-      { bugId: 123, bugDescription: 'Testing note 1', bugSubmissionDate: null, bugStatus: null },
-      { bugId: 355, bugDescription: 'Testing note 2', bugSubmissionDate: null, bugStatus:null },
-      { bugId: 456, bugDescription: 'Testing note 3', bugSubmissionDate: null, bugStatus:null  },
-    ];
-
+  
+    this.bServ.getAllBugs().subscribe(
+      response =>{
+        console.log(response);
+        this.bugList=response;
+      }); 
+      
     console.log(this.bugList);
   }
   

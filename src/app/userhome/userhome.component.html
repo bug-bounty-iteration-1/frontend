@@ -5,7 +5,7 @@
     <h2 class="title p-2">Bug Feed</h2>
 
     <button type="button" class="btn btn-primary mybtn orange-button m-2"  (click)="openModal()">+</button>
-    <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="row row-cols-1 g-2">
         <div class="col" *ngFor="let bug of bugList">
           <div class="card" *ngIf="bug.bugStatus.status==='Accepted'">
             <div class="card-body">
@@ -17,7 +17,7 @@
       </div>
 
               <!--Bug Details modal-->
-              <div class="modal modal-fs" tabindex="-1" role="dialog"  [ngStyle]="{'display':detail}">
+              <div class="modal modal-fs" id="exampleModalScrollable" tabindex="-1" role="dialog"  [ngStyle]="{'display':detail}">
                 <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
                   <div class="modal-content modal-c">
                     <div class="modal-header">
@@ -25,40 +25,40 @@
                         
                       <button type="button" class="btn btn-default" (click)="closeDetailsModal()" >Close</button>
                     </div>
+                   <div class="modal-body">
                     <div class="container">
-                        <form>
-                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">
-                            {{bugToUpdate.bugDescription}}
-                          </textarea>
-                        </form>
+                      <form>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">
+                          {{bugToUpdate.bugDescription}}
+                        </textarea>
+                      </form>
 
-                    </div>
-                    <div class="container">
-                      <hr>
-                      <h4 class="sub-title">Solutions</h4>
-                      <div [ngStyle]="{'background-image': solution.solutionStatus ? 'linear-gradient(rgba( 242, 105, 38, 1) 0%, rgba(253, 181, 21, 0.9)35% , white )' :  null , 'border-top' : solution.solutionStatus ? '0':null,  'border-left' : solution.solutionStatus ? '0':null,  'border-right' : solution.solutionStatus ? '0':null   }" *ngFor="let solution of solutionList" class="card border-dark mb-3" style="max-height: 20rem;">
-                        <div class="card-header"><small style="font-family:verdana">Author: {{solution.user.userName}} - Date: {{solution.solutionSubmissionDate}}</small></div>
-                        
-                        <div class="card-body text-dark">
-                          <div *ngIf="!solution.solutionStatus && currentBugOwnerId === currentUserId" class="mb-2"><button type="button" class="btn btn-success" (click)="approveSolution(solution)">Approve</button></div>
-                            <app-home-solutions-list [solution]="solution"></app-home-solutions-list>
-                        </div>
+                  </div>
+                  <div class="container">
+                    <hr>
+                    <h4 class="sub-title">Solutions</h4>
+                    <div [ngStyle]="{'background-image': solution.solutionStatus ? 'linear-gradient(rgba( 242, 105, 38, 1) 0%, rgba(253, 181, 21, 0.9)35% , white )' :  null , 'border-top' : solution.solutionStatus ? '0':null,  'border-left' : solution.solutionStatus ? '0':null,  'border-right' : solution.solutionStatus ? '0':null   }" *ngFor="let solution of solutionList" class="card border-dark mb-3" style="max-height: 20rem;">
+                      <div class="card-header"><small style="font-family:verdana">Author: {{solution.user.userName}} - Date: {{solution.solutionSubmissionDate}}</small></div>
+                      
+                      <div class="card-body text-dark">
+                        <div *ngIf="!solution.solutionStatus && currentBugOwnerId === currentUserId" class="mb-2"><button type="button" class="btn btn-success" (click)="approveSolution(solution)">Approve</button></div>
+                          <app-home-solutions-list [solution]="solution"></app-home-solutions-list>
                       </div>
                     </div>
-                    <div class="container">
-                      <hr>
-                      <form (ngSubmit)="submitSolution(bugToUpdate.bugId,sol.value,bugToUpdate.bugOwner)">
-                        <div class="mb-3">
-                          <label for="exampleFormControlTextarea1" class="form-label">Add a Solution</label>
-                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" #sol></textarea>
-                          <button type="submit" class="btn btn-primary" >Submit</button>
-                        </div>
-                      </form>
-                    </div>
-                    
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default" (click)="closeDetailsModal()" >Close</button>
-                    </div>
+                  </div>
+                  <div class="container">
+                    <hr>
+                    <form (ngSubmit)="submitSolution(bugToUpdate.bugId,sol.value,bugToUpdate.bugOwner)">
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Add a Solution</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" #sol></textarea>
+                        <button type="submit" class="btn btn-primary" >Submit</button>
+                      </div>
+                    </form>
+                  </div>
+                  
+                   </div>
+
                 </div>
             </div>
           </div>

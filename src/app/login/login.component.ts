@@ -61,9 +61,9 @@ export class LoginComponent implements OnInit {
 
   };
 
-  logout(){
-    localStorage.clear();
-    this._route.navigate(['']);  
-  }
+  // logout(){
+  //   localStorage.clear();
+  //   this._route.navigate(['']);  
+  // }
 
 }
