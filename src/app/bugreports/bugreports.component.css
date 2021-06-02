@@ -15,7 +15,7 @@ body {font-family: Arial;}
     padding: 10px;
   }
 /* Style the buttons inside the tab */
-.tab button {
+.button {
   background-color: var(--orange);
   border: none;
   outline: none;
