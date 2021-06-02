@@ -18,6 +18,7 @@ export class UserhomeComponent implements OnInit {
   constructor(private bServ: BugService,private sServ :SolutionServiceService) { }
   display = "none";
   detail= "none";
+  bugModel : Partial<Bug>;
   solution= new Solutions();
   currentUserId: number = 3;
   currentBugOwnerId: number;
@@ -66,6 +67,20 @@ export class UserhomeComponent implements OnInit {
     this.detail = "none";
   }
 
+  submitBug(bug){
+    let date = new Date();
+    bug.bugSubmissionDate = date;
+    let id = parseInt(localStorage.getItem('userId'));
+    console.log(id);
+    let bugOwner = {userId: id};
+    bug.bugOwner = bugOwner;
+    console.log(bug);
+    this.bServ.createBug(bug).subscribe(response => {
+      // console.log(response);
+    });
+    window.location.reload();
+  }
+    
   submitSolution(bugId,sol,bugOwner){
     console.log(sol);
     this.solution.solution=sol;

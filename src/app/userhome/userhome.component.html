@@ -72,14 +72,17 @@
                              
                             </div>
                    <div class="modal-body">
-                    <form>
-                        <div class="form-group">
+                    <form (ngSubmit)="submitBug(bug.value)" #bug='ngForm' >
+                        <div class="form-group m-2">
                           <label for="exampleInputEmail1">Bug Description</label>
-                          <textarea type="test" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                          <textarea [ngModel]="bugModel?.bugDescription" name="bugDescription" type="test" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                           </textarea>
                         </div>
-  
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        
+                        <div class="mt-2">
+
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
                       </form>
    
                      <div>

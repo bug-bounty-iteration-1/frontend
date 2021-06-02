@@ -49,6 +49,7 @@ import { HomeSolutionsListComponent } from './home-solutions-list/home-solutions
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
     ReactiveFormsModule

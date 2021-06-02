@@ -42,5 +42,8 @@ export class BugService {
     return this.httpCli.post(this.urlBase2,bug)
   }
 
+  public createBug(bug) {
+    return this.httpCli.post(this.urlBase + '/new-bug', bug)
+  }
 
 }
