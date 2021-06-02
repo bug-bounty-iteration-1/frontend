@@ -9,8 +9,12 @@ import { Bug } from './bug';
 
 
 export class BugService {
- 
+  
+ bug=new Bug();
+ user = localStorage.getItem('user');
+
   private urlBase="http://localhost:9090/bug";
+  private urlBase2="http://localhost:9090/bug/update-bugStatus";
   constructor(private httpCli: HttpClient) { }
 
   public getAllBugs(): Observable<Bug[]>{
@@ -24,11 +28,22 @@ export class BugService {
     return this.httpCli.get<Bug[]>(this.urlBase, httpHead);
   }
 
+
   public approveBug(bug) {
-    return this.httpCli.put(this.urlBase + '/approve', bug)
+
+    console.log(bug);
+    return this.httpCli.post(this.urlBase2,bug)
+
+
   }
   public denyBug(bug) {
-    return this.httpCli.put(this.urlBase + '/approve', bug)
+   
+    console.log(bug);
+    return this.httpCli.post(this.urlBase2,bug)
+  }
+
+  public createBug(bug) {
+    return this.httpCli.post(this.urlBase + '/new-bug', bug)
   }
 
 }

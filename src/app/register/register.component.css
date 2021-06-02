@@ -1,0 +1,29 @@
+
+
+  .revature-logo {
+    max-height: 70px;
+    padding: 2vh;
+}
+  #login .container #login-row #login-column #login-box {
+    margin-top: 120px;
+    max-width: 600px;
+    height: 390px;
+
+    background-color: white;
+  }
+  #login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+  }
+  #login .container #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+  }
+
+  .btn-info {
+    color: #000;
+    background-color: var(--orange);
+    border-color: #f0d90d;
+}
+
+.text-info {
+  color: var(--orange)!important;
+}

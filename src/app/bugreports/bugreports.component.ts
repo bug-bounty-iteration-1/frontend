@@ -12,11 +12,16 @@ import { BugService } from '../services/bugservice/bug.service';
 export class BugreportsComponent implements OnInit {
 
   bugList: Bug[];
+
   isShow1:boolean= false;
   isShow2:boolean= false;
   searchValue:string;
 
   constructor(private bServ :BugService) { }
+
+  bug= new Bug();
+  constructor(private bServ :BugService ) { }
+
 
   ngOnInit(): void {
     
@@ -65,21 +70,26 @@ export class BugreportsComponent implements OnInit {
     window.location.reload();
    }
   public approveBug(bug) {
+    bug.bugStatus.statusId=2;
+    bug.bugStatus.status="Accepted";
+   
     this.bServ.approveBug(bug).subscribe(
       response => {
         console.log(response);
       }
     )
-    this.reloadCurrentPage();
+   
   }
 
   public denyBug(bug) {
+    bug.bugStatus.statusId=4;
+    bug.bugStatus.status="Rejected";
     this.bServ.denyBug(bug).subscribe(
       response => {
         console.log(response);
       }
     )
-    this.reloadCurrentPage();
+    
   }
 
 }

@@ -10,9 +10,19 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent implements OnInit {
   message="";
+  userName="";
+  password="";
+
   user = new User();
-  user2 = new User();
-  userRole = "";
+  currentRole="";
+  roleId: number;
+
+  passChange(temp:any){
+    this.password=temp.target.value;
+  }
+  userChange(temp:any){
+    this.userName=temp.target.value;
+  }
   constructor(private _service:LoginService ,private _route:Router) { }
 
   ngOnInit(): void {
@@ -20,16 +30,26 @@ export class LoginComponent implements OnInit {
 
   submit(login){
 
-    this._service.loginUserFromRemote(this.user).subscribe(
+    this._service.loginUserFromRemote(this.userName, this.password).subscribe(
       response => {
-        this.user2 = response;
+        this.user = response;
         localStorage.setItem('userName',this.user.userName);
+        localStorage.setItem('userId',this.user.userId.toString());
+        this.currentRole = response.currentRole.role;
+        this.roleId = response.currentRole.roleId;
+        console.log(response.currentRole.role)
+        localStorage.setItem('userRole',(response.currentRole.role));
+        localStorage.setItem('role', this.currentRole);
+        localStorage.setItem('firstName', response.firstName);
+        localStorage.setItem('lastName', response.lastName);
+        localStorage.setItem('user', JSON.stringify(response));
 
-        this.userRole = response.role;
-        if(this.userRole = "user"){
+        console.log(this.currentRole);
+
+        if(this.roleId === 2){
           this._route.navigate(['./userhome']);
         }
-        else if (this.userRole = "admin"){
+        else {
           this._route.navigate(['./adminhome']);
         }
       },

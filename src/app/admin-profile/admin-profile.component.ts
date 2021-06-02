@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-admin-profile',
+  templateUrl: './admin-profile.component.html',
+  styleUrls: ['./admin-profile.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class AdminProfileComponent implements OnInit {
 
   role = localStorage.getItem('role');
   userName = localStorage.getItem('userName');
@@ -36,37 +35,3 @@ export class ProfileComponent implements OnInit {
   }
 
 }
-
-
-  // constructor(private api: UserService, private router: Router) { }
-
-  // ngOnInit(): void {
-  //   this.client = this.api.getLoggedClient()
-  //   if (this.client == null || this.client === undefined)
-  //   this.router.navigate(["/"]);
-  //   this.assignRole()
-  //   // this.client.role ? this.client.Role="Developer" : this.client.Role="Admin"
-  //   this.getClientPoint()
-  // }
-  // bugStatus
-  // solutionStatus
-  // points
-  // client
-  // closeResult = '';
-
-  // async getClientPoint(){
-  //   this.points = await this.api.getPoints(this.client.cId)
-  //   console.log(this.points)
-  //  }
-
-  //  assignRole(){
-  //   if(this.client === 0){
-  //     this.client.Role = "Developer"
-  //   }
-  //   else{
-  //     this.client.Role = "Admin"
-  //   }
-  // }
-  // }
-
-

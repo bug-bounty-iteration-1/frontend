@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -13,15 +12,22 @@ import { BugreportsComponent } from './bugreports/bugreports.component';
 import { UsernavComponent } from './usernav/usernav.component';
 import { AdminnavComponent } from './adminnav/adminnav.component';
 import { GlobalstylesComponent } from './globalstyles/globalstyles.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfilePictureComponent } from './profile/profile-picture/profile-picture.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProfileSolutionsComponent } from './profile/profile-solutions/profile-solutions.component';
+import { ProfileReportsComponent } from './profile/profile-reports/profile-reports.component';
 import { RegisterComponent } from './register/register.component';
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { SearchfilterPipe } from './searchfilter.pipe';
+
+import { HomeSolutionsListComponent } from './home-solutions-list/home-solutions-list.component';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+
+
 
 @NgModule({
   declarations: [
@@ -39,14 +45,19 @@ import { SearchfilterPipe } from './searchfilter.pipe';
     FooterComponent,
     ProfilePictureComponent,
     ProfileSolutionsComponent,
+    ProfileReportsComponent,
     RegisterComponent,
     SearchfilterPipe,
+    HomeSolutionsListComponent,
+    AdminProfileComponent,
+
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     HttpClientModule, ReactiveFormsModule
   ],

@@ -63,6 +63,7 @@
           <th scope="col">#</th>
           <th scope="col">Details</th>
           <th scope="col">Date</th>
+          <th scope="col">Created by</th>
           <th scope="col">Status</th>
           <th scope="col">Approve/Deny</th>
       </tr>
@@ -73,8 +74,12 @@
           <td>{{bug.bugId}}</td>
           <td>{{bug.bugDescription}}</td>
           <td>{{bug.bugSubmissionDate}}</td>
+
           <td>{{bug.bugStatus}}</td>
-          <!--<td>{{bug.bugStatus.status}}</td>-->
+
+          <td>{{bug.bugOwner.firstName}} {{bug.bugOwner.lastName}}</td>
+          <td >{{bug.bugStatus.status}}</td>
+
           <td >
 
               <button style="margin-right: 10px" class="btn btn-primary mybtn orange-button m-2" (click)=approveBug(bug)>Accept</button>
@@ -106,6 +111,7 @@
             <th scope="col">#</th>
             <th scope="col">Details</th>
             <th scope="col">Date</th>
+            <th scope="col">Created by</th>
             <th scope="col">Status</th>
           
         </tr>
@@ -117,10 +123,16 @@
             <td>{{bug.bugId}}</td>
             <td>{{bug.bugDescription}}</td>
             <td>{{bug.bugSubmissionDate}}</td>
+
             <td>{{bug.bugStatus}}</td>
           <!--<td>{{bug.bugStatus.status}}</td>-->
           </tr>
        <!--</tr>--> 
+
+            <td>{{bug.bugOwner.firstName}} {{bug.bugOwner.lastName}}</td>
+            <td>{{bug.bugStatus.status}}</td>
+      
+        </tr>
       </tbody>
     </table>
   </div>

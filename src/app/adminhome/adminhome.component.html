@@ -1,57 +1,57 @@
 <app-adminnav></app-adminnav>
 
-<div class="container p-5 m-5">
+<div class="container pt-5 mt-5 mb-5 pb-5">
 
     <h2 class="title p-2">Bug Feed</h2>
 
     <button type="button" class="btn btn-primary mybtn orange-button m-2"  (click)="openModal()">+</button>
-    <div class="row row-cols-1 row-cols-md-4 g-2">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
         <div class="col" *ngFor="let bug of bugList">
-          <div class="card" *ngIf="bug.bugStatus.status==='Pending'">
+          <div class="card" *ngIf="bug.bugStatus.status==='Accepted'">
             <div class="card-body">
-              
               <p class="card-text">{{bug.bugDescription}}</p>
-              <button class="btn btn-primary" (click)="openDetailsModal()">Show Details</button>
+              <button class="btn btn-primary" (click)="openDetailsModal(bug)">Show Details</button>
             </div>
           </div>
         </div>
       </div>
 
               <!--Bug Details modal-->
-              <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':detail}">
+              <div class="modal modal-fs" tabindex="-1" role="dialog"  [ngStyle]="{'display':detail}">
                 <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
-                  <div class="modal-content">
+                  <div class="modal-content modal-c">
                     <div class="modal-header">
                         <h4 class="modal-title">Bug Report</h4>
+                        
+                      <button type="button" class="btn btn-default" (click)="closeDetailsModal()" >Close</button>
                     </div>
                     <div class="container">
-                      <p>Bug description will go</p>
+                        <form>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">
+                            {{bugToUpdate.bugDescription}}
+                          </textarea>
+                        </form>
+
                     </div>
                     <div class="container">
-                        <hr>
+                      <hr>
                       <h4 class="sub-title">Solutions</h4>
-                      <div class="card border-dark mb-3" style="max-height: 20rem;">
-                        <div class="card-header">
-                            <small>Author - Submission Date</small>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                  Resolver
-                                </label>
-                              </div>
-                        </div>
+                      <div [ngStyle]="{'background-image': solution.solutionStatus ? 'linear-gradient(rgba( 242, 105, 38, 1) 0%, rgba(253, 181, 21, 0.9)35% , white )' :  null , 'border-top' : solution.solutionStatus ? '0':null,  'border-left' : solution.solutionStatus ? '0':null,  'border-right' : solution.solutionStatus ? '0':null   }" *ngFor="let solution of solutionList" class="card border-dark mb-3" style="max-height: 20rem;">
+                        <div class="card-header"><small style="font-family:verdana">Author: {{solution.user.userName}} - Date: {{solution.solutionSubmissionDate}}</small></div>
+                        
                         <div class="card-body text-dark">
-                          <p class="card-text">Solution Description will go here</p>
+                          <div *ngIf="!solution.solutionStatus && currentBugOwnerId === currentUserId" class="mb-2"><button type="button" class="btn btn-success" (click)="approveSolution(solution)">Approve</button></div>
+                            <app-home-solutions-list [solution]="solution"></app-home-solutions-list>
                         </div>
                       </div>
                     </div>
                     <div class="container">
-                        <hr>
-                      <form>
+                      <hr>
+                      <form (ngSubmit)="submitSolution(bugToUpdate.bugId,sol.value,bugToUpdate.bugOwner)">
                         <div class="mb-3">
                           <label for="exampleFormControlTextarea1" class="form-label">Add a Solution</label>
-                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                          <button type="submit" class="btn btn-primary">Submit</button>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" #sol></textarea>
+                          <button type="submit" class="btn btn-primary" >Submit</button>
                         </div>
                       </form>
                     </div>
@@ -63,7 +63,7 @@
             </div>
           </div>
 
-      <!--Modal-->
+      <!-- Create Bug Modal-->
     <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
         <div class="modal-dialog" role="document">
                  <div class="modal-content">
@@ -72,14 +72,17 @@
                              
                             </div>
                    <div class="modal-body">
-                    <form>
-                        <div class="form-group">
+                    <form (ngSubmit)="submitBug(bug.value)" #bug='ngForm' >
+                        <div class="form-group m-2">
                           <label for="exampleInputEmail1">Bug Description</label>
-                          <textarea type="test" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                          <textarea [ngModel]="bugModel?.bugDescription" name="bugDescription" type="test" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter bug description">
                           </textarea>
                         </div>
-  
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        
+                        <div class="mt-2">
+
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
                       </form>
    
                      <div>
@@ -88,6 +91,7 @@
                        <div class="modal-footer">
                          <button type="button" class="btn btn-default" (click)="onCloseHandled()" >Close</button>
                        </div>
+                       <span>{{msg}}</span>
                </div>
          </div>  
        </div>
