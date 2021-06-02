@@ -24,7 +24,6 @@ import { HomeSolutionsListComponent } from './home-solutions-list/home-solutions
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
