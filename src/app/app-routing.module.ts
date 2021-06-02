@@ -17,12 +17,12 @@ export const routes: Routes = [
   {path: '', component:LoginComponent},
   {path: 'userhome', component: UserhomeComponent, canActivate: [AuthgaurdService]},
   {path: 'adminhome', component: AdminhomeComponent,canActivate: [AuthgaurdService]},
-  {path: 'profile', component: ProfileComponent},
-  {path: 'adminprofile', component: AdminProfileComponent},
-  {path: 'bugreports', component: BugreportsComponent},
+  {path: 'profile', component: ProfileComponent,canActivate: [AuthgaurdService]},
+  {path: 'adminprofile', component: AdminProfileComponent,canActivate: [AuthgaurdService]},
+  {path: 'bugreports', component: BugreportsComponent,canActivate: [AuthgaurdService]},
  // {path: 'bugreports', component: BugreportsComponent, canActivate: [ AuthgaurdService] },
-  {path: 'leaderboard', component: LeaderboardComponent},
-  {path: 'metrics', component: MetricsComponent},
+  {path: 'leaderboard', component: LeaderboardComponent,canActivate: [AuthgaurdService]},
+  {path: 'metrics', component: MetricsComponent,canActivate: [AuthgaurdService]},
   {path: 'globalstyles', component: GlobalstylesComponent},
   {path: 'register', component: RegisterComponent}
 ];
