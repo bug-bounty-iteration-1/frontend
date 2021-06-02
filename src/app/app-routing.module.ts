@@ -15,8 +15,8 @@ import { UserhomeComponent } from './userhome/userhome.component';
 
 export const routes: Routes = [
   {path: '', component:LoginComponent},
-  {path: 'userhome', component: UserhomeComponent},
-  {path: 'adminhome', component: AdminhomeComponent},
+  {path: 'userhome', component: UserhomeComponent, canActivate: [AuthgaurdService]},
+  {path: 'adminhome', component: AdminhomeComponent,canActivate: [AuthgaurdService]},
   {path: 'profile', component: ProfileComponent},
   {path: 'adminprofile', component: AdminProfileComponent},
   {path: 'bugreports', component: BugreportsComponent},

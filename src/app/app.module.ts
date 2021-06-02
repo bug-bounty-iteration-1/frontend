@@ -20,12 +20,10 @@ import { FooterComponent } from './footer/footer.component';
 import { ProfileSolutionsComponent } from './profile/profile-solutions/profile-solutions.component';
 import { ProfileReportsComponent } from './profile/profile-reports/profile-reports.component';
 import { RegisterComponent } from './register/register.component';
-
+import { AuthgaurdService } from './services/bugservice/authgaurd.service';
 import { SearchfilterPipe } from './searchfilter.pipe';
-
 import { HomeSolutionsListComponent } from './home-solutions-list/home-solutions-list.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
-
 
 
 @NgModule({
@@ -60,7 +58,7 @@ import { AdminProfileComponent } from './admin-profile/admin-profile.component';
     RouterModule,
     HttpClientModule, ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{provide: AuthgaurdService, useClass: AuthgaurdService}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
