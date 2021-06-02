@@ -18,8 +18,16 @@ export class UserhomeComponent implements OnInit {
   constructor(private bServ: BugService,private sServ :SolutionServiceService) { }
   display = "none";
   detail= "none";
+  bugModel : Partial<Bug>;
   solution= new Solutions();
+  currentUserId: number;
+  currentBugOwnerId: number;
+
+  solutionList: Array<Solutions>;
   
+
+  msg;
+
   ngOnInit(): void {
     
     this.bServ.getAllBugs().subscribe(
@@ -28,11 +36,12 @@ export class UserhomeComponent implements OnInit {
         this.bugList = response;
       }
     )
+    this.currentUserId = parseInt(localStorage.getItem('userId'));
   }
   bugToUpdate = {
     bugId: "",
     bugDescription: "",
-    bugOwner:BugOwner
+    bugOwner : BugOwner
   }
 
   openModal() {
@@ -45,6 +54,12 @@ export class UserhomeComponent implements OnInit {
   openDetailsModal(bug) {
     this.detail = "block";
     this.bugToUpdate = bug;
+    console.log(this.bugToUpdate);
+    this.sServ.getBugSolutions(bug.bugId).subscribe(x => this.solutionList = x);
+    console.log(this.solutionList);
+    //untyping bugOwner to access userId field
+    let owner : any = this.bugToUpdate.bugOwner;
+    this.currentBugOwnerId = owner.userId;
  
   }
 
@@ -52,6 +67,20 @@ export class UserhomeComponent implements OnInit {
     this.detail = "none";
   }
 
+  submitBug(bug){
+    let date = new Date();
+    bug.bugSubmissionDate = date;
+    let id = parseInt(localStorage.getItem('userId'));
+    console.log(id);
+    let bugOwner = {userId: id};
+    bug.bugOwner = bugOwner;
+    console.log(bug);
+    this.bServ.createBug(bug).subscribe(response => {
+      // console.log(response);
+    });
+    window.location.reload();
+  }
+    
   submitSolution(bugId,sol,bugOwner){
     console.log(sol);
     this.solution.solution=sol;
@@ -67,9 +96,22 @@ export class UserhomeComponent implements OnInit {
     this.sServ.newSolution(this.solution).subscribe(
       response => {
         console.log(response);
+        if(response=-1){
+          this.msg="You cannot solve your own bug";
+        }
       }
     )
 
+  }
+
+  approveSolution(solution){
+    solution.solutionStatus = true;
+    this.sServ.approveSolutions(solution).subscribe(
+      res => {
+        console.log(res);
+      }
+    );
+    window.location.reload;
   }
 
 }

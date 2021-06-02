@@ -22,6 +22,8 @@ import { ProfileReportsComponent } from './profile/profile-reports/profile-repor
 import { RegisterComponent } from './register/register.component';
 import { AuthgaurdService } from './services/bugservice/authgaurd.service';
 
+import { HomeSolutionsListComponent } from './home-solutions-list/home-solutions-list.component';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 
 
 @NgModule({
@@ -42,12 +44,15 @@ import { AuthgaurdService } from './services/bugservice/authgaurd.service';
     ProfileSolutionsComponent,
     ProfileReportsComponent,
     RegisterComponent,
+    HomeSolutionsListComponent,
+    AdminProfileComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
     ReactiveFormsModule

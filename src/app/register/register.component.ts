@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { register } from './register';
 import { registerservice } from './register.service';
@@ -14,11 +14,17 @@ export class RegisterComponent implements OnInit {
   reglist: register[] = [];
 //firstName
     userObj = new FormGroup({
-    firstName: new FormControl(''),
-    password: new FormControl(''),
-    userName: new FormControl(''),
-    lastName: new FormControl('')
+    firstName: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
+    userName: new FormControl('', Validators.required),
+    lastName: new FormControl('', Validators.required)
   });
+
+  get firstName(){return this.userObj.get('firstName')}
+  get password(){return this.userObj.get('password')}
+  get userName(){return this.userObj.get('userName')}
+  get lastName(){return this.userObj.get('lastName')}
+
 
    constructor(private regServ: registerservice,private router:Router) { }
 
