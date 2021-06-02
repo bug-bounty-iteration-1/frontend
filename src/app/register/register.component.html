@@ -15,11 +15,13 @@
                     <form id="login-form" class="form" [formGroup] = "userObj">
                         <div class="form-group">
                             <label for="username" class="text-info">Username:</label><br>
-                            <input type="text" name="username" id="username" class="form-control" formControlName="userName">
+                            <input type="text" name="username" id="username" class="form-control" formControlName="userName" >
+                            <span class="error" *ngIf="userName.invalid">Username is Required</span>
                         </div>
                         <div class="form-group">
                             <label for="password" class="text-info">Password:</label><br>
                             <input type="text" name="password" id="password" class="form-control" formControlName="password">
+                            <span class="error" *ngIf="password.invalid">password is Required</span>
                         </div>
                         <!-- <div class="form-group">
                           <label for="password" class="text-info">Role:</label><br>
@@ -28,11 +30,13 @@
                       <div class="form-group">
                           <label for="firstname" class="text-info">firstName:</label><br>
                           <input type="text" name="firstName" id="password" class="form-control" formControlName="firstName">
-                      </div>
+                          <span class="error" *ngIf="firstName.invalid">First Name is Required</span>
+                        </div>
                       <div class="form-group">
                           <label for="firstname" class="text-info">lastName:</label><br>
                           <input type="text" name="firstName" id="password" class="form-control" formControlName="lastName">
-                      </div>
+                          <span class="error" *ngIf="lastName.invalid">Last Name is Required</span>
+                        </div>
                       <br><br>
                         <div class="form-group">
                             <button type="submit" class="btn btn-info btn-md" (click)="submitReg(userObj)">Submit</button>
