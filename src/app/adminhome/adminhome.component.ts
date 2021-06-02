@@ -18,6 +18,10 @@ export class AdminhomeComponent implements OnInit {
   display = "none";
   detail= "none";
   solution= new Solutions();
+  bugModel : Partial<Bug>;
+  
+  currentUserId: number;
+  currentBugOwnerId: number;
   
   solutionList: Array<Solutions>;
   
@@ -32,6 +36,8 @@ export class AdminhomeComponent implements OnInit {
         this.bugList = response;
       }
     )
+    
+    this.currentUserId = parseInt(localStorage.getItem('userId'));
   }
   
   bugToUpdate = {
@@ -52,11 +58,27 @@ export class AdminhomeComponent implements OnInit {
     this.bugToUpdate = bug;
     this.sServ.getBugSolutions(bug.bugId).subscribe(x => this.solutionList = x);
     console.log(this.solutionList);
+    let owner : any = this.bugToUpdate.bugOwner;
+    this.currentBugOwnerId = owner.userId;
     
   }
 
   closeDetailsModal(){
     this.detail = "none";
+  }
+
+  submitBug(bug){
+    let date = new Date();
+    bug.bugSubmissionDate = date;
+    let id = parseInt(localStorage.getItem('userId'));
+    console.log(id);
+    let bugOwner = {userId: id};
+    bug.bugOwner = bugOwner;
+    console.log(bug);
+    this.bServ.createBug(bug).subscribe(response => {
+      // console.log(response);
+    });
+    window.location.reload();
   }
 
   submitSolution(bugId,sol,bugOwner){
@@ -80,6 +102,16 @@ export class AdminhomeComponent implements OnInit {
       }
     )
 
+  }
+
+  approveSolution(solution){
+    solution.solutionStatus = true;
+    this.sServ.approveSolutions(solution).subscribe(
+      res => {
+        console.log(res);
+      }
+    );
+    window.location.reload;
   }
 
 

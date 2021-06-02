@@ -20,7 +20,7 @@ export class UserhomeComponent implements OnInit {
   detail= "none";
   bugModel : Partial<Bug>;
   solution= new Solutions();
-  currentUserId: number = 3;
+  currentUserId: number;
   currentBugOwnerId: number;
 
   solutionList: Array<Solutions>;
@@ -36,7 +36,7 @@ export class UserhomeComponent implements OnInit {
         this.bugList = response;
       }
     )
-    // this.currentUserId = parseInt(localStorage.getItem('userId'));
+    this.currentUserId = parseInt(localStorage.getItem('userId'));
   }
   bugToUpdate = {
     bugId: "",
