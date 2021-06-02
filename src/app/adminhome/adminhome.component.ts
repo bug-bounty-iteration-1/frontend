@@ -96,8 +96,9 @@ export class AdminhomeComponent implements OnInit {
     this.sServ.newSolution(this.solution).subscribe(
       response => {
         console.log(response);
-        if(response=-1){
-          this.msg="You cannot solve your own bug";
+        if(response!=-1){
+          //this.msg="You cannot solve your own bug";
+         window.location.reload();
         }
       }
     )

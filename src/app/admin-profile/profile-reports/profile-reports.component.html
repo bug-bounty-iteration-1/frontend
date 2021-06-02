@@ -17,7 +17,7 @@
          
               <td>{{bug.bugId}}</td>
               <td>{{bug.bugDescription}}</td>
-              <td>{{bug.bugSubmissionDate}}</td>
+              <td>{{bug.bugSubmissionDate | date:"fullDate" }}</td>
               <td>{{bug.bugStatus.status}}</td>
               <td>{{bug.bugOwner.firstName}} {{bug.bugOwner.lastName}}</td>
           </tr>

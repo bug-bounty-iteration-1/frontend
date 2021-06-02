@@ -1,6 +1,6 @@
 export class Status {
     constructor(
-        public statusId: number,
-        public status: String
+        public roleId: number,
+        public role: String
     ){}
 }
