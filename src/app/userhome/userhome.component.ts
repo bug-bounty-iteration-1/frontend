@@ -63,6 +63,10 @@ export class UserhomeComponent implements OnInit {
   submitBug(bug){
     let date = new Date();
     bug.bugSubmissionDate = date;
+    let id = parseInt(localStorage.getItem('userId'));
+    console.log(id);
+    let bugOwner = {userId: id};
+    bug.bugOwner = bugOwner;
     console.log(bug);
     this.bServ.createBug(bug).subscribe(response => {
       // console.log(response);
