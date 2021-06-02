@@ -90,8 +90,13 @@ export class UserhomeComponent implements OnInit {
   }
 
   approveSolution(solution){
-    console.log(solution);
     solution.solutionStatus = true;
+    this.sServ.approveSolutions(solution).subscribe(
+      res => {
+        console.log(res);
+      }
+    );
+    window.location.reload;
   }
 
 }
