@@ -20,6 +20,8 @@ import { ProfilePictureComponent } from './profile/profile-picture/profile-pictu
 import { FooterComponent } from './footer/footer.component';
 import { ProfileSolutionsComponent } from './profile/profile-solutions/profile-solutions.component';
 import { RegisterComponent } from './register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SearchfilterPipe } from './searchfilter.pipe';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { RegisterComponent } from './register/register.component';
     ProfilePictureComponent,
     ProfileSolutionsComponent,
     RegisterComponent,
+    SearchfilterPipe,
 
   ],
   imports: [
@@ -45,7 +48,7 @@ import { RegisterComponent } from './register/register.component';
     AppRoutingModule,
     FormsModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
