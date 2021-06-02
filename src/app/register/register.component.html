@@ -6,38 +6,40 @@
     </div>
   </nav>
 <div id="login">
-    <h3 class="text-center text-white pt-5">Registration</h3>
+    <h3 class="text-center text-white">Registration</h3>
   
-    <div class="container">
+    <div class="container text-center">
         <div id="login-row" class="row justify-content-center align-items-center">
             <div id="login-column" class="col-md-6">
                 <div id="login-box" class="col-md-12">
+                  <h3 class="title">Sign up for Bug Bounty!</h3>
+                   <small class="text-center">Already have an account? Back to <a routerLink=''>login</a></small>
                     <form id="login-form" class="form" [formGroup] = "userObj">
                         <div class="form-group">
                             <label for="username" class="text-info">Username:</label><br>
                             <input type="text" name="username" id="username" class="form-control" formControlName="userName" >
-                            <span class="error" *ngIf="userName.invalid">Username is Required</span>
+                            <span class="error" *ngIf="userName.invalid">Username is required</span>
                         </div>
                         <div class="form-group">
                             <label for="password" class="text-info">Password:</label><br>
                             <input type="text" name="password" id="password" class="form-control" formControlName="password">
-                            <span class="error" *ngIf="password.invalid">password is Required</span>
+                            <span class="error" *ngIf="password.invalid">password is required</span>
                         </div>
                         <!-- <div class="form-group">
                           <label for="password" class="text-info">Role:</label><br>
                           <input type="text" name="password" id="password" class="form-control" formControlName="email">
                       </div> -->
                       <div class="form-group">
-                          <label for="firstname" class="text-info">firstName:</label><br>
+                          <label for="firstname" class="text-info">First name:</label><br>
                           <input type="text" name="firstName" id="password" class="form-control" formControlName="firstName">
-                          <span class="error" *ngIf="firstName.invalid">First Name is Required</span>
+                          <span class="error" *ngIf="firstName.invalid">First name is required</span>
                         </div>
                       <div class="form-group">
-                          <label for="firstname" class="text-info">lastName:</label><br>
+                          <label for="firstname" class="text-info">Last name:</label><br>
                           <input type="text" name="firstName" id="password" class="form-control" formControlName="lastName">
-                          <span class="error" *ngIf="lastName.invalid">Last Name is Required</span>
+                          <span class="error" *ngIf="lastName.invalid">Last name is required</span>
                         </div>
-                      <br><br>
+                      <br>
                         <div class="form-group">
                             <button type="submit" class="btn btn-info btn-md" (click)="submitReg(userObj)">Submit</button>
                              
