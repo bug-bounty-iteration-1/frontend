@@ -2,46 +2,29 @@
 <app-adminnav></app-adminnav>
 <div class ="container pt-5 mt-5">
 
-
   <!--<div class="tab" style = align-self:auto; style="margin: auto; width: 65%;">-->
-
-
-
 
 <div class ="centre">
   <!--<div   class="shadow-lg p-3 mb-5 bg-white rounded" data-toggle="buttons" style = align-self:auto style="margin: auto; width: 65% ;padding: 10pxstyle" style="align-content: center;">-->
     <div   class="shadow-lg p-3 mb-5 bg-white rounded" data-toggle="buttons">
 
-  
-  <button class="btn btn-danger btn-lg active" aria-pressed="true" (click)="setValue()"><h2>Pending Bug Report</h2></button>
-  <button  class="btn btn-primary btn-lg active"  aria-pressed="true" (click)="setValue2()"><h2>Accepted Bug Report</h2></button>
+  <button class="btn btn-danger btn-lg active" aria-pressed="true" (click)="setValue()"><h2>Get Bug Reports</h2></button>
+  <!--<button  class="btn btn-primary btn-lg active"  aria-pressed="true" (click)="setValue2()"><h2>Accepted Bug Report</h2></button>-->
 
-
-
-</div>
+    </div>
 </div>
 <!--
-
 <div class="btn-group btn-group-toggle" data-toggle="buttons" style = align-self:auto; style="margin: auto; width: 65%;">
-  
-  
     <button (click)="setValue()" type="radio" name="options" id="option2" autocomplete="off"> <h2>Pending Bug Report</h2></button>
- 
-  
     <button  (click)="setValue2()" type="radio" name="options" id="option3" autocomplete="off"> <h2>Accepted Bug Report</h2></button>
 
 </div>
 
 -->
-
 <div *ngIf="isShow1" id="pendingbugreport" >
-
 <!--<div style="height:120px;"></div>-->
 <div style="margin: auto; width: 65%;" >
-
 <br>
-
-
 <!--
 <form [formGroup]="formGroup">
   <input
@@ -70,75 +53,29 @@
     </thead>
     <tbody  >
       <tr *ngFor="let bug of bugList | searchfilter:searchValue">
-       <!-- <tr *ngIf="bug.bugStatus.status==='Pending'">-->
+      
           <td>{{bug.bugId}}</td>
           <td>{{bug.bugDescription}}</td>
           <td>{{bug.bugSubmissionDate}}</td>
-
-          <td>{{bug.bugStatus}}</td>
-
+          <td>{{bug.bugStatus.status}}</td>
           <td>{{bug.bugOwner.firstName}} {{bug.bugOwner.lastName}}</td>
           <td >{{bug.bugStatus.status}}</td>
-
-          <td >
-
+          <td>
+            <span *ngIf="bug.bugStatus.status==='Pending'">
               <button style="margin-right: 10px" class="btn btn-primary mybtn orange-button m-2" (click)=approveBug(bug)>Accept</button>
               <button class="btn btn-primary mybtn blue-button m-2" (click)=denyBug(bug)>Reject</button>
+            </span>
+
+            <span *ngIf="bug.bugStatus.status!='Pending'">
+              <button style="margin-right: 10px" class="btn btn-primary mybtn orange-button m-2" (click)=approveBug(bug) disabled>Accept</button>
+              <button class="btn btn-primary mybtn blue-button m-2" (click)=denyBug(bug) disabled>Reject</button>
+            </span>
           </td>
-          <!--</tr>--> 
       </tr>
     </tbody>
   </table>
 </div>
 </div>
-
-
-
-
-
-<div *ngIf="isShow2" id="acceptedbugreport" >
-<div class="pb-5 mb-5" style="margin: auto; width: 65%;">
-  
-
-
-  <label> <h2>Search</h2></label>
-<input type ="text" [(ngModel)]="searchValue" class ="form-control" id ="search"/>
-
-  <br>
-  <table class="table table-striped table-hover" >
-      <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Details</th>
-            <th scope="col">Date</th>
-            <th scope="col">Created by</th>
-            <th scope="col">Status</th>
-          
-        </tr>
-      </thead>
-      <tbody  >
-        <tr *ngFor="let bug of bugList | searchfilter:searchValue">
-        <!--<tr *ngIf="bug.bugStatus.status==='Accepted' || bug.bugStatus.status === 'Resolved'">-->
-       
-            <td>{{bug.bugId}}</td>
-            <td>{{bug.bugDescription}}</td>
-            <td>{{bug.bugSubmissionDate}}</td>
-
-            <td>{{bug.bugStatus}}</td>
-          <!--<td>{{bug.bugStatus.status}}</td>-->
-          </tr>
-       <!--</tr>--> 
-
-            <td>{{bug.bugOwner.firstName}} {{bug.bugOwner.lastName}}</td>
-            <td>{{bug.bugStatus.status}}</td>
-      
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-
 
 
 

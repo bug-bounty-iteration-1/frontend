@@ -21,7 +21,6 @@ import { ProfileSolutionsComponent } from './profile/profile-solutions/profile-s
 import { ProfileReportsComponent } from './profile/profile-reports/profile-reports.component';
 import { RegisterComponent } from './register/register.component';
 
-import { ReactiveFormsModule } from '@angular/forms';
 import { SearchfilterPipe } from './searchfilter.pipe';
 
 import { HomeSolutionsListComponent } from './home-solutions-list/home-solutions-list.component';
