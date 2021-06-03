@@ -98,7 +98,7 @@ export class UserhomeComponent implements OnInit {
         console.log(response);
         if(response=-1){
          // this.msg="You cannot solve your own bug";
-         alert("you cannot solve your own bug");
+        //  alert("you cannot solve your own bug");
         }
         else
         window.location.reload();
